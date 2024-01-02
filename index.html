@@ -6,64 +6,109 @@
     <title>Chapter 7</title>
   </head>
   <body>
-    <h1>Forms</h1>
-    <form action="">
-      <label for="username">username</label>
-      <input
-        type="text"
-        name="username"
-        id="username"
-        placeholder="Enter your username"
-      />
-      <br />
-      <br />
-      <label for="E-mail">E-mail</label>
-      <input
-        type="text"
-        name="E-mail"
-        id="E-mail"
-        placeholder="Enter your E-mail"
-      />
-      <br />
-      <br />
-      <label for="Password ">Password</label>
-      <input
-        type="Password"
-        name="Password"
-        id="Password"
-        placeholder="Enter your Password"
-      />
-      <br />
-      <br />
-      <input type="radio" name="Gender" id="Gender" />
-      <label for="male">Male</label>
-      <input type="radio" name="Gender" id="Gender" />
-      <label for="Female">Female</label>
-      <br />
-      <br />
-      <label for="age">Select your Age</label>
-      <select name="Age" id="age">
-        Age
-        <option value="18-25">18-25</option>
-        <option value="25-35">25-35</option>
-        <option value="35-50">35-50</option>
+    <form action="/submit" method="post">
+      <fieldset>
+        <legend>
+          <h2>Job Application Form</h2>
+        </legend>
+        <label>Position Applied For:</label>
+        <label
+          ><input type="checkbox" name="Position" value="software engineer" />
+          software engineer</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            name="Position"
+            value="full stack developer "
+          />
+          full stack developer
+        </label>
+        <label
+          ><input type="checkbox" name="Position" value="graphics designer" />
+          graphics designer</label
+        >
+        <label
+          ><input type="checkbox" name="Position" value="Accountant" />
+          Accountant</label
+        >
         <br />
         <br />
-        <input type="checkbox" name="Subscribe" id="Subscribe" />
-        <label for="Subscribe">Subscribe to Newsletter</label>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required />
         <br />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <br />
+        <br />
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required />
+        <br />
+        <br />
+        <select name="City" id="City">
+          <option value="City" selected disabled>Select your city</option>
+          <option value="karachi">karachi</option>
+          <option value="Islamabad">Islamabad</option>
+          <option value="Lahore">Lahore</option>
+        </select>
+        <br />
+        <br />
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" />
+        <br />
+        <br />
+        <label>Gender:</label>
+        <label><input type="radio" name="gender" value="male" /> Male</label>
+        <label
+          ><input type="radio" name="gender" value="female" /> Female</label
+        >
+        <br />
+        <br />
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" />
+        <br />
+        <br />
+        <label for="resume">Upload Resume (PDF or Word):</label>
+        <br />
+        <input
+          type="file"
+          id="resume"
+          name="resume"
+          accept=".pdf, .doc, .docx"
+          required
+        />
+        <br />
+        <br />
+
+        <label for="coverletter">Cover Letter:</label>
         <br />
         <textarea
-          name="Comments"
-          id="Comments"
-          cols="40"
-          rows="10"
-          placeholder="Enter your Comments"
+          id="coverletter"
+          name="coverletter"
+          rows="5"
+          cols="50"
+          maxlength="300"
+          required
         ></textarea>
         <br />
         <br />
-        <input type="submit" name="submit" id="submit" />
-      </select>
+        <label for="experience">Relevant Experience (years):</label>
+        <input type="number" id="experience" name="experience" required />
+        <br />
+        <br />
+        <label for="education">Highest Education Level:</label>
+        <select id="education" name="education" required>
+          <option value="highschool">High School</option>
+          <option value="associate">Associate's Degree</option>
+          <option value="bachelor">Bachelor's Degree</option>
+          <option value="master">Master's Degree</option>
+          <option value="phd">Ph.D.</option>
+        </select>
+        <br />
+        <br />
+        <button type="submit">Submit Application</button>
+      </fieldset>
     </form>
   </body>
 </html>
